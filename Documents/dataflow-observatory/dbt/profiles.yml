@@ -1,0 +1,28 @@
+# Copy this file to ~/.dbt/profiles.yml (dbt looks there by default).
+# Fill in your Snowflake free-trial credentials.
+dataflow_observatory:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account:   "{{ env_var('SNOWFLAKE_ACCOUNT',  'your-account-here') }}"   # e.g. abc12345.us-east-1
+      user:      "{{ env_var('SNOWFLAKE_USER',    'your-user-here') }}"
+      password:  "{{ env_var('SNOWFLAKE_PASSWORD','your-password-here') }}"
+      role:      ACCOUNTADMIN
+      warehouse: DFO_WH
+      database:  DATAFLOW_OBSERVATORY
+      schema:    ANALYTICS                                   # dbt default write schema
+      threads:   4
+      client_session_keep_alive: false
+
+    prod:
+      type: snowflake
+      account:   "{{ env_var('SNOWFLAKE_ACCOUNT',  'your-account-here') }}"
+      user:      "{{ env_var('SNOWFLAKE_USER',    'your-user-here') }}"
+      password:  "{{ env_var('SNOWFLAKE_PASSWORD','your-password-here') }}"
+      role:      ACCOUNTADMIN
+      warehouse: DFO_WH
+      database:  DATAFLOW_OBSERVATORY
+      schema:    ANALYTICS
+      threads:   8
+      client_session_keep_alive: false
