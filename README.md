@@ -1,4 +1,4 @@
-# Task Manager — SOFTACT Take-Home Assignment
+# Task Manager: SOFTACT Take-Home Assignment
 
 A full-stack task management app built with **React + TypeScript** (frontend) and **Node.js + Express** (backend).
 
@@ -77,10 +77,10 @@ Proj/
 
 ## Decisions & Trade-offs
 
-**Data persistence — JSON file vs. database**
+**Data persistence: JSON file vs. database**
 I used a JSON file (`tasks.json`) as the data store. This keeps the project dependency-free and easy to run locally. In production I'd swap in SQLite or Postgres with proper migrations.
 
-**IDs — `Date.now()` as string**
+**IDs: `Date.now()` as string**
 Simple and collision-resistant for a single-server demo. A UUID library would be the right choice in production.
 
 **`useTasks` custom hook**
