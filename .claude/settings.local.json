@@ -8,7 +8,10 @@
       "Bash(curl -s http://localhost:3001/tasks)",
       "Bash(kill %1)",
       "Bash(npm run *)",
-      "Bash(gh auth *)"
+      "Bash(gh auth *)",
+      "Bash(git add *)",
+      "Bash(git commit *)",
+      "Bash(jobs)"
     ]
   }
 }
